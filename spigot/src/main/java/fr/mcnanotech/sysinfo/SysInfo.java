@@ -50,17 +50,28 @@ public class SysInfo extends JavaPlugin
 		}
 
 		info.add("--- System information ---");
-		if(getOSType() == EnumOS.LINUX)
-		{
-			executeCommand(info, "uname -a");
-			executeCommand(info, "ps aux");
-			executeCommand(info, "free -m");
-			executeCommand(info, "cat /proc/cpuinfo");
-		}
-		else if(getOSType() == EnumOS.WINDOWS)
-		{
-			executeCommand(info, "SYSTEMINFO");
-			executeCommand(info, "tasklist.exe /fo csv /nh");
+		EnumOS os = getOSType();
+		switch(os){
+			case LINUX:
+				executeCommand(info, "uname -a");
+				executeCommand(info, "ps aux");
+				executeCommand(info, "free -m");
+				executeCommand(info, "cat /proc/cpuinfo");
+				break;
+			case WINDOWS:
+				executeCommand(info, "SYSTEMINFO");
+				executeCommand(info, "tasklist.exe /fo csv /nh");
+				break;
+			case MACOS:
+				executeCommand(info, "system_profiler");
+				break;
+			case SOLARIS:
+				executeCommand(info, "showrev");
+				executeCommand(info, "/bin/uname -X");
+				executeCommand(info, "/usr/sbin/psrinfo -v");
+				break;
+			default:
+				break;
 		}
 		info.add("--- SysInfo finish ---");
 
