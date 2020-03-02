@@ -1,4 +1,5 @@
 name: SysInfoPlugin
 main: fr.mcnanotech.sysinfo.SysInfo
+api: spigot
 version: 1.0.0
 author: robin4002
