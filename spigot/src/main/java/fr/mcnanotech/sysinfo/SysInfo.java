@@ -71,6 +71,7 @@ public class SysInfo extends JavaPlugin
 				executeCommand(info, "/usr/sbin/psrinfo -v");
 				break;
 			default:
+				info.add("Systeme non reconnu");
 				break;
 		}
 		info.add("--- SysInfo finish ---");
