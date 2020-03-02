@@ -12,8 +12,8 @@ allprojects {
     apply plugin: 'idea'
     apply plugin: 'java'
 
-    group 'fr.antoineok'
-    version '1.0-SNAPSHOT'
+    group 'fr.mcnanotech'
+    version '1.0'
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
